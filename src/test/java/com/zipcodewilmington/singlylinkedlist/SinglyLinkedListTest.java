@@ -108,5 +108,77 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(3,llist.size());
     }
 
+    //
+    @Test
+    public void testFind0()
+    {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        Assert.assertEquals(-1,llist.find(1));
+    }
+
+    @Test
+    public void testFind1()
+    {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        Assert.assertEquals(0,llist.find(1));
+    }
+
+    @Test
+    public void testFind2()
+    {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        Assert.assertEquals(llist.size()-1,llist.find(1));
+    }
+
+    @Test
+    public void testFind3()
+    {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.add(5);
+        llist.add(3);
+        Assert.assertEquals(2,llist.find(3));
+    }
+
+    @Test
+    public void testFind4()
+    {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.add(5);
+        llist.add(3);
+        Assert.assertEquals(1,llist.find(5));
+    }
+
+    @Test
+    public void testFind5()
+    {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.add(5);
+        llist.add(3);
+        llist.add(24);
+        llist.add(42);
+        llist.add(11);
+        llist.add(896);
+        Assert.assertEquals(llist.size()-1,llist.find(896));
+    }
+
+    @Test
+    public void testFind6()
+    {
+        SinglyLinkedList<Integer> llist = new SinglyLinkedList<>();
+        llist.add(1);
+        llist.add(5);
+        llist.add(3);
+        llist.add(24);
+        llist.add(42);
+        llist.add(11);
+        llist.add(896);
+        Assert.assertEquals(-1,llist.find(123));
+    }
+
 }
 
